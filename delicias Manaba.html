@@ -1,249 +1,739 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicias Manabas Ecológicas - EcoRed</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
- body{
-    margin: 0;
-    font-family: Arial, sans-serif;
-    scroll-behavior: smooth;
- }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            scroll-behavior: smooth;
+        }
 
-.encabezado {
-	display: flex;
-	align-items: center;
-	height: 65px;
-	background-color: #F7F7F7;
-	width: 100%;
-	justify-content: left;
-}
+        /* Header mejorado */
+        .encabezado {
+            display: flex;
+            align-items: center;
+            height: 80px;
+            background: linear-gradient(135deg, #F7F7F7 0%, #E8F5E8 100%);
+            width: 100%;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-.imagen {
-	width: 150px;
-	height: 60px;
-	margin: 5px;
-}
-.menu {
-    width: 100%;
-    align-items: center;
-    display: flex;
-    height: 50px;
-    justify-content: center;
-    background-color: white;
-	font-family: Times New Roman;
-	font-weight: bold;
-	position: relative;
-    z-index: 10;
-}
-nav {
-}
-ul ul li > ul {
-    left: 100%; 
-    top: 0;
-}
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
 
-li {
-    display: inline-block;
-    position: relative;
-}
+        .imagen {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #2E7D32, #4CAF50);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
 
-li a {
-    display: block;
-    color: black;
-    text-decoration: none;
-    padding: 17px 25;
-}
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2E7D32;
+        }
 
-li:hover > ul {
-    display: block;
-}
+        /* Menú mejorado */
+        .menu {
+            background: transparent;
+        }
 
-ul ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    border: 1px solid black;
-}
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+        }
 
-ul ul li {
-    width: 100%;
-}
-li:hover > ul ul ul {
-    display: block;
-}
+        nav ul li {
+            position: relative;
+            margin: 0 10px;
+        }
 
-li a:hover {
-    background-color: #808B96;
-}
+        nav ul li a {
+            display: block;
+            color: #2E7D32;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
 
-.eco-container {
-    padding: 40px;
-    background-color: #EAF4EA;
-    text-align: center;
-}
+        nav ul li a:hover {
+            background: linear-gradient(45deg, #2E7D32, #4CAF50);
+            color: white;
+            transform: translateY(-2px);
+        }
 
-.eco-container h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #2E7D32;
-}
+        /* Submenu mejorado */
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            min-width: 200px;
+            z-index: 1000;
+        }
 
-.eco-container p {
-    font-size: 18px;
-    color: #4E4E4E;
-    max-width: 800px;
-    margin: 0 auto 40px;
-}
+        nav ul li:hover > ul {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
 
-.eco-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-.eco-card {
-    background-color: white;
-    border-radius: 15px;
-    padding: 20px;
-    width: 250px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.9), rgba(76, 175, 80, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23E8F5E8" width="1200" height="600"/><circle fill="%234CAF50" opacity="0.1" cx="200" cy="150" r="100"/><circle fill="%232E7D32" opacity="0.1" cx="800" cy="300" r="150"/><circle fill="%234CAF50" opacity="0.1" cx="1000" cy="100" r="80"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
 
-.eco-card:hover {
-    transform: scale(1.05);
-}
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease;
+        }
 
-.eco-card h3 {
-    color: #2E7D32;
-    margin-bottom: 10px;
-}
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
 
-.eco-card p {
-    color: #666;
-}
+        .cta-button {
+            display: inline-block;
+            background: #FF6B35;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
 
-.pie {
-	display: flex;
-	align-items: center;
-	height: 35%;
-	justify-content: center;
-	width: 100%;
-	background-color:#302023;
-}
-.imag {
-	width: 100px;
-	height: 40px;
-	margin: 5px;
-	}
-.imaper {
-	width: 100%;
-	height: 70%;
-	margin: 0;
-	}
-.imapie {
-	width: 200px;
-	height: 110px;
-	margin: 0;
-	}
-.ico {
-	width: 170px;
-	height: 75px;
-	margin: 0;
-	}
-.footer-section{
-	display: inline-block;
-    width: 17%;
-	height: 20%;
-	background-color:#302023;
-	justify-content: center;
-	}
-.footer-section1{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-    width: 100%;
-	height: 10%;
-	background-color:#302023;
-	}
+        .cta-button:hover {
+            background: #E55A2B;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+        }
 
-</style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Sección principal mejorada */
+        .eco-container {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #EAF4EA 0%, #F1F8E9 100%);
+            text-align: center;
+        }
+
+        .eco-container h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: #2E7D32;
+            position: relative;
+        }
+
+        .eco-container h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #2E7D32, #4CAF50);
+            border-radius: 2px;
+        }
+
+        .eco-container > p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            line-height: 1.8;
+        }
+
+        /* Grid mejorado */
+        .eco-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .eco-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .eco-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(45deg, #2E7D32, #4CAF50);
+        }
+
+        .eco-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .eco-card .icon {
+            font-size: 3rem;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .eco-card h3 {
+            color: #2E7D32;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .eco-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Nueva sección de productos */
+        .productos-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .productos-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2E7D32;
+            margin-bottom: 50px;
+        }
+
+        .productos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .producto-card {
+            background: #F8F8F8;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .producto-card:hover {
+            transform: scale(1.05);
+        }
+
+        .producto-img {
+            height: 200px;
+            background: linear-gradient(45deg, #81C784, #A5D6A7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .producto-info {
+            padding: 20px;
+        }
+
+        .producto-info h3 {
+            color: #2E7D32;
+            margin-bottom: 10px;
+        }
+
+        .producto-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .precio {
+            color: #FF6B35;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Sección de testimonios */
+        .testimonios {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #E8F5E8, #F1F8E9);
+        }
+
+        .testimonios h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2E7D32;
+            margin-bottom: 50px;
+        }
+
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonio {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .testimonio .stars {
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .testimonio p {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonio .autor {
+            color: #2E7D32;
+            font-weight: bold;
+        }
+
+        /* Footer mejorado */
+        .pie {
+            background: linear-gradient(135deg, #2C2C2C, #1A1A1A);
+            color: white;
+            padding: 60px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h3 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #CCCCCC;
+            text-decoration: none;
+            line-height: 1.8;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #4CAF50;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #4CAF50;
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: #2E7D32;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 40px;
+            border-top: 1px solid #444;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .eco-container h2 {
+                font-size: 2rem;
+            }
+            
+            .encabezado {
+                flex-direction: column;
+                height: auto;
+                padding: 10px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        /* Botón scroll to top */
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .scroll-top:hover {
+            background: #2E7D32;
+            transform: translateY(-3px);
+        }
+
+        .scroll-top.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
 </head>
 <body>
-<header class="encabezado">
-	<img class="imagen" src="logo.jpg">
-	<h1></h1>
-	<div class="menu">
-	<nav>
-	<ul>
-		<li><a href="index.html">Inicio </a></li>
-		<li><a href="Sobre EcoRed.html">Sobre EcoRed</a></li>
-		<li><a href="emprendimientos.html">Emprendimientos</a>
-			<ul>
-				<li><a href="delicias Manaba.html">Delicias Manabas</a></li>
-			</ul>
-		</li>
-		<li><a href="educacionECO.html">Educación Eco </a></li>
-		<li><a href="contacto.html">Contacto</a></li>
-	</ul>
-	</nav>
-	</div>
-</header>
+    <!-- Header mejorado -->
+    <header class="encabezado">
+        <div class="logo-container">
+            <div class="imagen">ER</div>
+            <div class="logo-text">EcoRed</div>
+        </div>
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="Sobre EcoRed.html"><i class="fas fa-leaf"></i> Sobre EcoRed</a></li>
+                    <li><a href="emprendimientos.html"><i class="fas fa-seedling"></i> Emprendimientos</a>
+                        <ul>
+                            <li><a href="delicias Manaba.html">Delicias Manabas</a></li>
+                            <li><a href="#productos">Nuestros Productos</a></li>
+                            <li><a href="#ubicacion">Ubicación</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="educacionECO.html"><i class="fas fa-graduation-cap"></i> Educación Eco</a></li>
+                    <li><a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<section class="eco-container">
-  <h2>Delicias Manabas Ecológicas</h2>
-  <p>Descubre alternativas sostenibles que no solo cuidan tu salud, sino también la del planeta. Apuesta por un consumo consciente y responsable.</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Delicias Manabas Ecológicas</h1>
+        <p>Sabores auténticos de Manabí con compromiso ambiental. Cada bocado cuenta una historia de tradición y sustentabilidad.</p>
+        <a href="#productos" class="cta-button">Descubre Nuestros Sabores</a>
+    </section>
 
-  <div class="eco-grid">
-    <div class="eco-card">
-      <h3>Platos sin plástico</h3>
-      <p>Se evita el uso de utensilios desechables. Todo es biodegradable o reutilizable.</p>
-    </div>
-    <div class="eco-card">
-      <h3>Ingredientes locales</h3>
-      <p>Todos los productos provienen de fincas cercanas, reduciendo la huella de carbono.</p>
-    </div>
-    <div class="eco-card">
-      <h3>Compromiso cero desperdicio</h3>
-      <p>Las sobras son compostadas o donadas. Nada se desperdicia.</p>
-    </div>
-  </div>
-</section>
+    <!-- Sección principal mejorada -->
+    <section class="eco-container">
+        <h2>Nuestro Compromiso Verde</h2>
+        <p>En Delicias Manabas creemos que la gastronomía tradicional y la sostenibilidad pueden ir de la mano. Cada plato que preparamos lleva el sello de nuestro compromiso con el medio ambiente y la comunidad local.</p>
 
-<footer>
-  <div class="pie">
-    <div class="footer-section">
-      <p><img class="imapie" src="logo.jpg" alt="Logo"></p>
-    </div>
-    <div class="footer-section">
-      <p style="color:#FFFFFF">
-		<a href="Sobre EcoRed.html" style="color:#FFFFFF; text-decoration: none;">Sobre EcoRed</a>
-	  </p>
-	  <p style="color:#FFFFFF">
-		<a href="emprendimientos.html" style="color:#FFFFFF; text-decoration: none;">Emprendimientos</a>
-	  </p>
-	  <p style="color:#FFFFFF">
-		<a href="educacionECO.html" style="color:#FFFFFF; text-decoration: none;">Educación Eco</a>
-	  </p>
-	  <p style="color:#FFFFFF">
-		<a href="contacto.html" style="color:#FFFFFF; text-decoration: none;">Contacto</a>
-	  </p>
-    </div>
-    <div class="footer-section">
-      <p style="color:#FFFFFF">Sigue a EcoRed en redes sociales</p>
-      <p><img class="ico" src="REDES.jpg"></p>
-    </div>
-  </div>
-  <div class="footer-section1">
-    <p style="color:#8A8A8A;">Condiciones de uso<span style="margin-right: 20px;"></span>Política de privacidad<span style="margin-right: 20px;"></span>Acuerdo de licencia<span style="margin-right: 20px;"></span>&copy; 2025 EcoRed</p>
-  </div>
-</footer>
+        <div class="eco-grid">
+            <div class="eco-card">
+                <div class="icon"><i class="fas fa-utensils"></i></div>
+                <h3>Platos sin plástico</h3>
+                <p>Utilizamos únicamente utensilios biodegradables hechos de materiales naturales como hojas de plátano, bambú y fibras vegetales. Nuestra vajilla es 100% compostable.</p>
+            </div>
+            <div class="eco-card">
+                <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                <h3>Ingredientes locales</h3>
+                <p>Trabajamos directamente con agricultores manabitas en un radio de 50km. Esto reduce nuestra huella de carbono y apoya la economía local, garantizando frescura y calidad.</p>
+            </div>
+            <div class="eco-card">
+                <div class="icon"><i class="fas fa-recycle"></i></div>
+                <h3>Cero desperdicio</h3>
+                <p>Implementamos un sistema integral donde las sobras orgánicas se compostan para nutrir nuestro huerto urbano, y los excedentes se donan a comedores comunitarios.</p>
+            </div>
+            <div class="eco-card">
+                <div class="icon"><i class="fas fa-water"></i></div>
+                <h3>Gestión del agua</h3>
+                <p>Reciclamos el agua de cocción para riego, utilizamos sistemas de bajo consumo y tratamos las aguas grises de manera responsable.</p>
+            </div>
+            <div class="eco-card">
+                <div class="icon"><i class="fas fa-solar-panel"></i></div>
+                <h3>Energía renovable</h3>
+                <p>Nuestras cocinas funcionan parcialmente con energía solar, y utilizamos cocinas eficientes que reducen el consumo energético en un 40%.</p>
+            </div>
+            <div class="eco-card">
+                <div class="icon"><i class="fas fa-users"></i></div>
+                <h3>Comunidad local</h3>
+                <p>Capacitamos a familias locales en técnicas de agricultura sostenible y comercio justo, creando una red de proveedores comprometidos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de productos -->
+    <section class="productos-section" id="productos">
+        <h2>Nuestras Especialidades</h2>
+        <div class="productos-grid">
+            <div class="producto-card">
+                <div class="producto-img">🍤</div>
+                <div class="producto-info">
+                    <h3>Ceviche Manabita</h3>
+                    <p>Preparado con camarones frescos del día, yuca orgánica y limones de la región. Servido en hojas de bijao.</p>
+                    <div class="precio">$8.50</div>
+                </div>
+            </div>
+            <div class="producto-card">
+                <div class="producto-img">🐟</div>
+                <div class="producto-info">
+                    <h3>Pescado Encocado</h3>
+                    <p>Corvina fresca en leche de coco artesanal, con especias locales y yuca cultivada sin pesticidas.</p>
+                    <div class="precio">$12.00</div>
+                </div>
+            </div>
+            <div class="producto-card">
+                <div class="producto-img">🌽</div>
+                <div class="producto-info">
+                    <h3>Chifles Artesanales</h3>
+                    <p>Plátano verde orgánico, cortado a mano y frito en aceite de coco. Sin conservantes ni aditivos.</p>
+                    <div class="precio">$3.25</div>
+                </div>
+            </div>
+            <div class="producto-card">
+                <div class="producto-img">🥥</div>
+                <div class="producto-info">
+                    <h3>Agua de Coco Natural</h3>
+                    <p>Directamente del coco, sin procesar. Rico en electrolitos naturales y completamente refrescante.</p>
+                    <div class="precio">$2.75</div>
+                </div>
+            </div>
+            <div class="producto-card">
+                <div class="producto-img">🍌</div>
+                <div class="producto-info">
+                    <h3>Bolón de Verde</h3>
+                    <p>Plátano verde orgánico relleno de queso fresco local o chicharrón de cerdo criollo. Receta tradicional.</p>
+                    <div class="precio">$6.00</div>
+                </div>
+            </div>
+            <div class="producto-card">
+                <div class="producto-img">🦀</div>
+                <div class="producto-info">
+                    <h3>Cangrejo Reventado</h3>
+                    <p>Cangrejos rojos frescos del estuario, preparados con técnicas ancestrales y especias naturales.</p>
+                    <div class="precio">$15.50</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de testimonios -->
+    <section class="testimonios">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <div class="testimonios-grid">
+            <div class="testimonio">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"La comida más auténtica que he probado en años. Me encanta saber que están cuidando el planeta mientras preparan estos deliciosos platos tradicionales."</p>
+                <div class="autor">- María González</div>
+            </div>
+            <div class="testimonio">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"Como turista, fue increíble descubrir un lugar que combina la cultura gastronómica local con prácticas tan responsables con el medio ambiente."</p>
+                <div class="autor">- Carlos Mendoza</div>
+            </div>
+            <div class="testimonio">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"El ceviche es espectacular y me da tranquilidad saber que apoyo a productores locales. Definitivamente volveré con toda mi familia."</p>
+                <div class="autor">- Ana Rodríguez</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer mejorado -->
+    <footer class="pie">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Delicias Manabas</h3>
+                <p>Sabores auténticos con compromiso ambiental. Tradición culinaria manabita que cuida nuestro planeta.</p>
+                <p><i class="fas fa-map-marker-alt"></i> Calle Principal 123, Portoviejo, Manabí</p>
+                <p><i class="fas fa-phone"></i> +593 99 123 4567</p>
+                <p><i class="fas fa-envelope"></i> info@deliciasmanabas.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Navegación</h3>
+                <p><a href="Sobre EcoRed.html">Sobre EcoRed</a></p>
+                <p><a href="emprendimientos.html">Emprendimientos</a></p>
+                <p><a href="educacionECO.html">Educación Eco</a></p>
+                <p><a href="contacto.html">Contacto</a></p>
+                <p><a href="#productos">Nuestros Productos</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Horarios</h3>
+                <p>Lunes a Viernes: 8:00 AM - 9:00 PM</p>
+                <p>Sábados: 9:00 AM - 10:00 PM</p>
+                <p>Domingos: 9:00 AM - 8:00 PM</p>
+                <h3 style="margin-top: 20px;">Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Certificaciones</h3>
+                <p>🌱 Certificado Orgánico</p>
+                <p>♻️ Cero Desperdicio</p>
+                <p>🏆 Comercio Justo</p>
+                <p>🌍 Carbono Neutral</p>
+                <p>📧 Suscríbete a nuestro boletín para recibir recetas y tips ecológicos</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>Condiciones de uso | Política de privacidad | Acuerdo de licencia | © 2025 EcoRed - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <!-- Botón scroll to top -->
+    <button class="scroll-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Scroll to top functionality
+        window.onscroll = function() {
+            const scrollTopBtn = document.querySelector('.scroll-top');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        };
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading animation to cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards for animation
+        document.querySelectorAll('.eco-card, .producto-card, .testimonio').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
