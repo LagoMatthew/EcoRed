@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
 <head>
   <meta charset="UTF-8">
@@ -56,6 +56,24 @@
 
     nav ul li a:hover {
       background-color: #808B96;
+    }
+
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      background-color: white;
+      top: 50px;
+      left: 0;
+      padding: 0;
+      z-index: 1000;
+    }
+
+    nav ul li:hover ul {
+      display: block;
+    }
+
+    nav ul li ul li {
+      width: 200px;
     }
 
     .titulo {
@@ -142,11 +160,12 @@
         <ul>
           <li><a href="index.html">Inicio</a></li>
           <li><a href="Sobre EcoRed.html">Sobre EcoRed</a></li>
-          <li><a href="emprendimientos.html">Emprendimientos</a></li>
-          	<UL>
-			<li><a href="delicias Manaba.html">Ecologi Mat</a></li>
-               	</UL>
-	  </li>
+          <li>
+            <a href="emprendimientos.html">Emprendimientos</a>
+            <ul>
+              <li><a href="delicias Manaba.html">Ecologi Mat</a></li>
+            </ul>
+          </li>
           <li><a href="educacionECO.html">Educación Eco</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
