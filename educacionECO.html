@@ -1,284 +1,229 @@
 <html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-
-<style>
- body{
-            margin: 0;
+  <meta charset="UTF-8">
+  <title>Educación Eco - EcoRed</title>
+  <style>
+    body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      scroll-behavior: smooth; /* Scroll suave */
+      background-image: url('fondo-eco.jpg'); /* Usa una imagen suave tipo naturaleza */
+      background-size: cover;
+      background-position: center;
+      backdrop-filter: blur(4px);
+      scroll-behavior: smooth;
     }
-		
-.encabezado {
-	display: flex;
-	align-items: center;
-	height: 65px;
-	background-color: #F7F7F7;
-	width: 100%;
-	justify-content: left;
-}
 
-.imagen {
-	width: 150px;
-	height: 60px;
-	margin: 5px;
-}
- .menu {
-    width: 100%;
-    align-items: center;
-    display: flex;
-    height: 50px;
-    justify-content: center;
-    background-color: white;
-	font-family: Times New Roman;
-	font-weight: bold;
-	position: relative;
-    z-index: 10;
-  }
-  nav {
-  }
-ul ul li > ul {
-    left: 100%; 
-    top: 0;
-	}
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
+    .encabezado {
+      display: flex;
+      align-items: center;
+      height: 65px;
+      background-color: rgba(247, 247, 247, 0.8);
+      width: 100%;
+      justify-content: left;
+      padding-left: 10px;
+    }
 
-  li {
-    display: inline-block;
-    position: relative;
-  }
+    .imagen {
+      width: 150px;
+      height: 60px;
+      margin: 5px;
+    }
 
-  li a {
-    display: block;
-    color: black;
-    text-decoration: none;
-    padding: 17px 25;
-	
-  }
+    .menu {
+      width: 100%;
+      align-items: center;
+      display: flex;
+      height: 50px;
+      justify-content: center;
+      background-color: white;
+      font-family: 'Times New Roman';
+      font-weight: bold;
+      z-index: 10;
+    }
 
-  li:hover > ul {
-    display: block;
-  }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
 
-  ul ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    border: 1px solid black;
-  }
+    nav li {
+      display: inline-block;
+      position: relative;
+    }
 
-  ul ul li {
-    width: 100%;
-  }
-    li:hover > ul ul ul {
-    display: block;
-  }
+    nav li a {
+      display: block;
+      color: black;
+      text-decoration: none;
+      padding: 17px 25px;
+    }
 
-  li a:hover {
-    background-color: #808B96;
-  }
+    nav li:hover > ul {
+      display: block;
+    }
 
-.div-container1 {
-    display: inline-block;
-    width: 70%;
-    margin: 15px;
-    border: 1px solid black;
-    padding: 1px;
-	height: 75%;
-	border-radius: 10px;
-background-color: rgba(255, 255, 255, 0.5); /
-	overflow:auto;
-}
-.div-container2 {
-background-color: rgba(255, 255, 255, 0.5); /
-    display: inline-block;
-    width: 70%;
-    margin: 15px;
-    border: 1px solid black;
-    padding: 1px;
-	height: 75%;
-	border-radius: 10px;
+    nav ul ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      border: 1px solid black;
+    }
 
-	overflow:auto;
-}
-.div-container3 {
-    display: inline-block;
-    width: 70%;
-    margin: 15px;
-    border: 1px solid black;
-    padding: 1px;
-	height: 70%;
-	border-radius: 10px;
-background-color: rgba(255, 255, 255, 0.5); /
-	overflow:auto;
-}
-.contenedor1 {
-        display: flex;
-		height: 78.5%;
-}
+    nav ul ul li {
+      display: block;
+      width: 200px;
+    }
 
-.imagenes {
-	width: 80px;
-	height: 60px;
-	margin: 5px;
-}
+    nav li a:hover {
+      background-color: #808B96;
+    }
 
-.pie {
-	display: flex;
-	align-items: center;
-	height: 35%;
-	justify-content: center;
-	width: 100%;
-	background-color:#302023;
-}
-.imag {
-	width: 100px;
-	height: 40px;
-	margin: 5px;
-	}
-	imggif {
-            width: 100%; 
-            height: 100%;
-            object-fit: cover; 
-        }
-.imaper {
-	width: 100%;
-	height: 70%;
-	margin: 0;
-	}
-.imapie {
-	width: 200px;
-	height: 110px;
-	margin: 0;
-	}
-.ico {
-	width: 170px;
-	height: 75px;
-	margin: 0;
-	}
-.footer-section{
-	display: inline-block;
-    width: 17%;
-	height: 20%;
-	background-color:#302023;
-	justify-content: center;
-	}
-	.footer-section1{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-    width: 100%;
-	height: 10%;
-	background-color:#302023;
-	}
-	
-.sobre-ecored {
-  padding: 40px 20px;
-  background-color: #e0f5e9; /* un verde claro */
-  font-family: 'Arial', sans-serif;
-  color: #2d572c; /* verde oscuro */
-  border-radius: 8px;
-  margin: 40px auto;
-  max-width: 800px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
+    h1 {
+      color: white;
+      text-align: center;
+      padding: 40px 0 10px;
+      font-size: 48px;
+      text-shadow: 2px 2px 4px #000;
+    }
 
-.sobre-ecored h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
+    .sub {
+      text-align: center;
+      font-size: 20px;
+      color: #f1f1f1;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 3px #000;
+    }
 
-.sobre-ecored h3 {
-  font-size: 20px;
-  margin-top: 20px;
-  font-weight: bold;
-}
+    .consejos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      padding: 20px;
+    }
 
-.sobre-ecored p {
-  font-size: 16px;
-  line-height: 1.6;
-}
+    .tarjeta {
+      width: 300px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      font-size: 20px;
+      color: #2c3e50;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
 
+    .tarjeta:hover {
+      transform: scale(1.05);
+    }
 
-</style>
+    footer {
+      text-align: center;
+      color: white;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      margin-top: 40px;
+    }
+
+    .pie {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      background-color: #302023;
+      padding: 20px 0;
+    }
+
+    .footer-section {
+      display: inline-block;
+      width: 17%;
+      background-color: #302023;
+      color: white;
+      padding: 10px;
+    }
+
+    .footer-section1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #302023;
+      height: 50px;
+      color: #8A8A8A;
+      font-size: 14px;
+    }
+
+    .imapie {
+      width: 200px;
+      height: 110px;
+      margin: 0 auto;
+    }
+
+    .ico {
+      width: 170px;
+      height: 75px;
+    }
+  </style>
 </head>
 <body>
 
-		<header class="encabezado">
-		<img class="imagen" src="logo.jpg">
-		<h1></h1>
-		<div class="menu">
-      <nav>
-        <ul>
-		<li><a href="EcoRed.html">Inicio </a></li>
-          <li><a href="Sobre EcoRed.html">Sobre EcoRed</a>
-            <ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="emprendimientos.html">Emprendimientos</a>
-		  <UL>
-			  <li><a href="delicias Manaba.html">Delicias Manaba </a></li>
-			  </UL>
-          <li><a href="educacionECO.html">Educación Eco </a>
+<header class="encabezado">
+  <img class="imagen" src="logo.jpg" alt="Logo EcoRed">
+  <div class="menu">
+    <nav>
+      <ul>
+        <li><a href="EcoRed.html">Inicio</a></li>
+        <li><a href="Sobre EcoRed.html">Sobre EcoRed</a></li>
+        <li>
+          <a href="emprendimientos.html">Emprendimientos</a>
+          <ul>
+            <li><a href="delicias matthew.html">Delicias Matthew</a></li>
+          </ul>
+        </li>
+        <li><a href="educacionECO.html">Educación Eco</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </nav>
+<main>
+  <h1>Educación Eco</h1>
+  <p class="sub">Consejos para consumir con conciencia y vivir de forma más sostenible.</p>
+
+  <section class="consejos">
+    <div class="tarjeta">🧠 “Lleva tu propia bolsa, es un pequeño acto con gran impacto.”</div>
+    <div class="tarjeta">♻ “No se trata de reciclar más, se trata de consumir menos.”</div>
+    <div class="tarjeta">🌎 “Cada compra es un voto por el mundo en el que quieres vivir.”</div>
+  </section>
+</main>
+
+<footer>
+  <div class="pie">
+    <div class="footer-section">
+      <img class="imapie" src="logo.jpg" alt="Logo">
     </div>
-	</header>
-	
-	
-	
-<section class="sobre-ecored">
-  <h2>¿Qué es EcoRed?</h2>
-  <p>
-    Es una red digital de emprendimientos ecológicos. Nuestro objetivo es impulsar productos y servicios sostenibles, promoviendo el consumo responsable y el cuidado del medio ambiente.
-  </p>
-
-  <h2>¿Por qué nace?</h2>
-  <p>
-    Nace de la necesidad de visibilizar pequeños proyectos ecológicos que muchas veces no tienen plataformas donde mostrarse.
-  </p>
-</section>
-
-
-  
-
-	<footer>
-    <div class="pie">
-        <div class="footer-section">
-            <p><img class="imapie" src="logo.jpg" alt="Logo"></p>
-        </div>
-        <div class="footer-section">
-                <p style="color:#FFFFFF">
-					<a href="Sobre EcoRed.html" style="color:#FFFFFF; text-decoration: none;">Sobre EcoRed</a>
-				</p>
-				<p style="color:#FFFFFF">
-					<a href="emprendimientos.html" style="color:#FFFFFF; text-decoration: none;">Emprendimientos</a>
-				</p>
-				<p style="color:#FFFFFF">
-					<a href="educacionECO.html" style="color:#FFFFFF; text-decoration: none;">Educación Eco</a>
-				</p>
-				<p style="color:#FFFFFF">
-					<a href="contacto.html" style="color:#FFFFFF; text-decoration: none;">Contacto</a>
-				</p>
-        </div>
-        <div class="footer-section">
-		<p style="color:#FFFFFF">Sigue a EcoRed en redes sociales</p>
-         <p><img class="ico" src="REDES.jpg"></p>
-        </div>
-		
+    <div class="footer-section">
+      <p><a href="Sobre EcoRed.html" style="color:#FFFFFF; text-decoration: none;">Sobre EcoRed</a></p>
+      <p><a href="emprendimientos.html" style="color:#FFFFFF; text-decoration: none;">Emprendimientos</a></p>
+      <p><a href="educacionECO.html" style="color:#FFFFFF; text-decoration: none;">Educación Eco</a></p>
+      <p><a href="contacto.html" style="color:#FFFFFF; text-decoration: none;">Contacto</a></p>
     </div>
-	<div class="footer-section1">
-		<p style="color:#8A8A8A;">Condiciones de uso<span style="margin-right: 20px;"></span>Política de privacidad<span style="margin-right: 20px;"></span>Acuerdo de licencia<span style="margin-right: 20px;"></span>&copy; 2025 EcoRed</p>
-        </div>
+    <div class="footer-section">
+      <p>Sigue a EcoRed en redes sociales</p>
+      <img class="ico" src="REDES.jpg" alt="Redes Sociales">
+    </div>
+  </div>
+  <div class="footer-section1">
+    <p>Condiciones de uso&nbsp;&nbsp;&nbsp;Política de privacidad&nbsp;&nbsp;&nbsp;Acuerdo de licencia&nbsp;&nbsp;&nbsp;&copy; 2025 EcoRed</p>
+  </div>
 </footer>
+
 </body>
 </html>
