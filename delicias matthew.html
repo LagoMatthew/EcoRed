@@ -1,9 +1,9 @@
-< html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Delicias de Matthew</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoRed - Delicias de Matthew</title>
   <style>
     body {
       margin: 0;
@@ -28,6 +28,58 @@
       width: 150px;
       height: 60px;
       margin: 5px;
+    }
+
+    .menu {
+      width: 100%;
+      align-items: center;
+      display: flex;
+      height: 50px;
+      justify-content: center;
+      background-color: white;
+      font-family: "Times New Roman";
+      font-weight: bold;
+      position: relative;
+      z-index: 10;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      display: inline-block;
+      position: relative;
+    }
+
+    nav li a {
+      display: block;
+      color: black;
+      text-decoration: none;
+      padding: 17px 25px;
+    }
+
+    nav li:hover > ul {
+      display: block;
+    }
+
+    nav ul ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      border: 1px solid black;
+    }
+
+    nav ul ul li {
+      width: 200px;
+    }
+
+    nav li a:hover {
+      background-color: #808B96;
     }
 
     h1 {
@@ -100,6 +152,33 @@
   <header class="encabezado">
     <img class="imagen" src="logo.jpg" alt="Logo EcoRed">
   </header>
+
+  <div class="menu">
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Sobre EcoRed.html">Sobre EcoRed</a></li>
+        <li><a href="emprendimientos.html">Emprendimientos</a>
+          <ul>
+            <li><a href="#">Delicias Matthew</a></li>
+            <li><a href="#">SPIDER GWEN</a></li>
+            <li><a href="#">DOC STRANGER</a></li>
+            <li><a href="#">OTROS</a>
+              <ul>
+                <li><a href="#">IRONMAN</a></li>
+                <li><a href="#">HULK</a></li>
+                <li><a href="#">THOR</a></li>
+                <li><a href="#">CAPITÁN AMÉRICA</a></li>
+                <li><a href="#">HENRY PYM</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="educacionECO.html">Educación Eco</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
 
   <h1>Delicias de Matthew</h1>
   <p class="sub">Comida ecuatoriana con sazón tradicional y amor familiar.</p>
