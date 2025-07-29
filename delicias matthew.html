@@ -32,9 +32,7 @@
 
     .menu {
       width: 100%;
-      align-items: center;
       display: flex;
-      height: 50px;
       justify-content: center;
       background-color: white;
       font-family: "Times New Roman";
@@ -43,14 +41,20 @@
       z-index: 10;
     }
 
+    nav {
+      width: 100%;
+      position: relative;
+    }
+
     nav ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
+      display: flex;
+      justify-content: center;
     }
 
     nav li {
-      display: inline-block;
       position: relative;
     }
 
@@ -72,10 +76,16 @@
       left: 0;
       background-color: white;
       border: 1px solid black;
+      z-index: 99;
     }
 
     nav ul ul li {
       width: 200px;
+    }
+
+    nav ul ul ul {
+      left: 100%;
+      top: 0;
     }
 
     nav li a:hover {
@@ -221,3 +231,4 @@
   </footer>
 </body>
 </html>
+
