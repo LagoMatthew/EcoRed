@@ -1,271 +1,249 @@
-<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Delicias de Matthew - EcoRed</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-image: url('fondo-comida.jpg');
-      background-size: cover;
-      background-position: center;
-      backdrop-filter: blur(4px);
-      scroll-behavior: smooth;
-    }
 
-    .encabezado {
-      display: flex;
-      align-items: center;
-      height: 65px;
-      background-color: rgba(247, 247, 247, 0.8);
-      width: 100%;
-      justify-content: left;
-      padding-left: 10px;
-    }
+<style>
+ body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+ }
 
-    .imagen {
-      width: 150px;
-      height: 60px;
-      margin: 5px;
-    }
+.encabezado {
+	display: flex;
+	align-items: center;
+	height: 65px;
+	background-color: #F7F7F7;
+	width: 100%;
+	justify-content: left;
+}
 
-    .menu {
-      width: 100%;
-      align-items: center;
-      display: flex;
-      height: 50px;
-      justify-content: center;
-      background-color: white;
-      font-family: 'Times New Roman';
-      font-weight: bold;
-      z-index: 10;
-    }
+.imagen {
+	width: 150px;
+	height: 60px;
+	margin: 5px;
+}
+.menu {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    background-color: white;
+	font-family: Times New Roman;
+	font-weight: bold;
+	position: relative;
+    z-index: 10;
+}
+nav {
+}
+ul ul li > ul {
+    left: 100%; 
+    top: 0;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
 
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
+li {
+    display: inline-block;
+    position: relative;
+}
 
-    nav li {
-      display: inline-block;
-      position: relative;
-    }
+li a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 17px 25;
+}
 
-    nav li a {
-      display: block;
-      color: black;
-      text-decoration: none;
-      padding: 17px 25px;
-    }
+li:hover > ul {
+    display: block;
+}
 
-    nav li:hover > ul {
-      display: block;
-    }
+ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid black;
+}
 
-    nav ul ul {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: white;
-      border: 1px solid black;
-    }
+ul ul li {
+    width: 100%;
+}
+li:hover > ul ul ul {
+    display: block;
+}
 
-    nav ul ul li {
-      display: block;
-      width: 200px;
-    }
+li a:hover {
+    background-color: #808B96;
+}
 
-    nav li a:hover {
-      background-color: #808B96;
-    }
+.eco-container {
+    padding: 40px;
+    background-color: #EAF4EA;
+    text-align: center;
+}
 
-    h1 {
-      color: white;
-      text-align: center;
-      padding: 40px 0 10px;
-      font-size: 48px;
-      text-shadow: 2px 2px 4px #000;
-    }
+.eco-container h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #2E7D32;
+}
 
-    p.sub {
-      text-align: center;
-      font-size: 20px;
-      color: #f1f1f1;
-      margin-bottom: 30px;
-      text-shadow: 1px 1px 3px #000;
-    }
+.eco-container p {
+    font-size: 18px;
+    color: #4E4E4E;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
 
-    .galeria {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-      padding: 20px;
-    }
+.eco-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
 
-    .plato {
-      width: 300px;
-      background-color: rgba(255, 255, 255, 0.85);
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-    }
+.eco-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
 
-    .plato:hover {
-      transform: scale(1.05);
-    }
+.eco-card:hover {
+    transform: scale(1.05);
+}
 
-    .plato img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
+.eco-card h3 {
+    color: #2E7D32;
+    margin-bottom: 10px;
+}
 
-    .plato h3 {
-      text-align: center;
-      margin: 10px 0 5px;
-      font-size: 22px;
-      color: #2c3e50;
-    }
+.eco-card p {
+    color: #666;
+}
 
-    .plato p {
-      padding: 0 15px 15px;
-      font-size: 16px;
-      text-align: center;
-      color: #555;
-    }
+.pie {
+	display: flex;
+	align-items: center;
+	height: 35%;
+	justify-content: center;
+	width: 100%;
+	background-color:#302023;
+}
+.imag {
+	width: 100px;
+	height: 40px;
+	margin: 5px;
+	}
+.imaper {
+	width: 100%;
+	height: 70%;
+	margin: 0;
+	}
+.imapie {
+	width: 200px;
+	height: 110px;
+	margin: 0;
+	}
+.ico {
+	width: 170px;
+	height: 75px;
+	margin: 0;
+	}
+.footer-section{
+	display: inline-block;
+    width: 17%;
+	height: 20%;
+	background-color:#302023;
+	justify-content: center;
+	}
+.footer-section1{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    width: 100%;
+	height: 10%;
+	background-color:#302023;
+	}
 
-    footer {
-      text-align: center;
-      color: white;
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.6);
-      margin-top: 40px;
-    }
-
-    .pie {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      background-color: #302023;
-      padding: 20px 0;
-    }
-
-    .footer-section {
-      display: inline-block;
-      width: 17%;
-      background-color: #302023;
-      color: white;
-      padding: 10px;
-    }
-
-    .footer-section1 {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #302023;
-      height: 50px;
-      color: #8A8A8A;
-      font-size: 14px;
-    }
-
-    .imapie {
-      width: 200px;
-      height: 110px;
-      margin: 0 auto;
-    }
-
-    .ico {
-      width: 170px;
-      height: 75px;
-    }
-  </style>
+</style>
 </head>
 <body>
-
 <header class="encabezado">
-  <img class="imagen" src="logo.jpg" alt="Logo EcoRed">
-  <div class="menu">
-    <nav>
-      <ul>
-        <li><a href="EcoRed.html">Inicio</a></li>
-        <li><a href="Sobre EcoRed.html">Sobre EcoRed</a></li>
-        <li>
-          <a href="emprendimientos.html">Emprendimientos</a>
-          <ul>
-            <li><a href="delicias Manaba.html">Delicias Manaba</a></li>
-          </ul>
-        </li>
-        <li><a href="educacionECO.html">Educación Eco</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </div>
+	<img class="imagen" src="logo.jpg">
+	<h1></h1>
+	<div class="menu">
+	<nav>
+	<ul>
+		<li><a href="index.html">Inicio </a></li>
+		<li><a href="Sobre EcoRed.html">Sobre EcoRed</a></li>
+		<li><a href="emprendimientos.html">Emprendimientos</a>
+			<ul>
+				<li><a href="delicias Manaba.html">Delicias Manabas</a></li>
+			</ul>
+		</li>
+		<li><a href="educacionECO.html">Educación Eco </a></li>
+		<li><a href="contacto.html">Contacto</a></li>
+	</ul>
+	</nav>
+	</div>
 </header>
 
-<main>
-  <h1>Delicias de Matthew</h1>
-  <p class="sub">Comida ecuatoriana con sazón tradicional y amor familiar.</p>
+<section class="eco-container">
+  <h2>Delicias Manabas Ecológicas</h2>
+  <p>Descubre alternativas sostenibles que no solo cuidan tu salud, sino también la del planeta. Apuesta por un consumo consciente y responsable.</p>
 
-  <section class="galeria">
-    <div class="plato">
-      <img src="encebollado.jpg" alt="Encebollado">
-      <h3>Encebollado</h3>
-      <p>Albacora, yuca, cebolla encurtida y limón. Clásico del Ecuador.</p>
+  <div class="eco-grid">
+    <div class="eco-card">
+      <h3>Platos sin plástico</h3>
+      <p>Se evita el uso de utensilios desechables. Todo es biodegradable o reutilizable.</p>
     </div>
-    <div class="plato">
-      <img src="ceviche.jpg" alt="Ceviche">
-      <h3>Ceviche de camarón</h3>
-      <p>Fresco y marinado con jugo de limón, cebolla y tomate.</p>
+    <div class="eco-card">
+      <h3>Ingredientes locales</h3>
+      <p>Todos los productos provienen de fincas cercanas, reduciendo la huella de carbono.</p>
     </div>
-    <div class="plato">
-      <img src="bolon.jpg" alt="Bolón">
-      <h3>Bolón de verde</h3>
-      <p>Plátano verde majado con queso o chicharrón. Perfecto para el desayuno.</p>
+    <div class="eco-card">
+      <h3>Compromiso cero desperdicio</h3>
+      <p>Las sobras son compostadas o donadas. Nada se desperdicia.</p>
     </div>
-    <div class="plato">
-      <img src="pollo.jpg" alt="Seco de pollo">
-      <h3>Seco de pollo</h3>
-      <p>Pollo jugoso en salsa de cerveza y especias, acompañado de arroz y maduro.</p>
-    </div>
-    <div class="plato">
-      <img src="tigrillo.jpg" alt="Tigrillo">
-      <h3>Tigrillo</h3>
-      <p>Delicia costeña con plátano, queso, huevo y cebolla. Energía pura.</p>
-    </div>
-    <div class="plato">
-      <img src="corviche.jpg" alt="Corviche">
-      <h3>Corviche</h3>
-      <p>Plátano con maní y relleno de pescado. Crocante por fuera, suave por dentro.</p>
-    </div>
-  </section>
-</main>
+  </div>
+</section>
 
 <footer>
   <div class="pie">
     <div class="footer-section">
-      <img class="imapie" src="logo.jpg" alt="Logo">
+      <p><img class="imapie" src="logo.jpg" alt="Logo"></p>
     </div>
     <div class="footer-section">
-      <p><a href="Sobre EcoRed.html" style="color:#FFFFFF; text-decoration: none;">Sobre EcoRed</a></p>
-      <p><a href="emprendimientos.html" style="color:#FFFFFF; text-decoration: none;">Emprendimientos</a></p>
-      <p><a href="educacionECO.html" style="color:#FFFFFF; text-decoration: none;">Educación Eco</a></p>
-      <p><a href="contacto.html" style="color:#FFFFFF; text-decoration: none;">Contacto</a></p>
+      <p style="color:#FFFFFF">
+		<a href="Sobre EcoRed.html" style="color:#FFFFFF; text-decoration: none;">Sobre EcoRed</a>
+	  </p>
+	  <p style="color:#FFFFFF">
+		<a href="emprendimientos.html" style="color:#FFFFFF; text-decoration: none;">Emprendimientos</a>
+	  </p>
+	  <p style="color:#FFFFFF">
+		<a href="educacionECO.html" style="color:#FFFFFF; text-decoration: none;">Educación Eco</a>
+	  </p>
+	  <p style="color:#FFFFFF">
+		<a href="contacto.html" style="color:#FFFFFF; text-decoration: none;">Contacto</a>
+	  </p>
     </div>
     <div class="footer-section">
-      <p>Sigue a EcoRed en redes sociales</p>
-      <img class="ico" src="REDES.jpg" alt="Redes Sociales">
+      <p style="color:#FFFFFF">Sigue a EcoRed en redes sociales</p>
+      <p><img class="ico" src="REDES.jpg"></p>
     </div>
   </div>
   <div class="footer-section1">
-    <p>Condiciones de uso&nbsp;&nbsp;&nbsp;Política de privacidad&nbsp;&nbsp;&nbsp;Acuerdo de licencia&nbsp;&nbsp;&nbsp;&copy; 2025 EcoRed</p>
+    <p style="color:#8A8A8A;">Condiciones de uso<span style="margin-right: 20px;"></span>Política de privacidad<span style="margin-right: 20px;"></span>Acuerdo de licencia<span style="margin-right: 20px;"></span>&copy; 2025 EcoRed</p>
   </div>
 </footer>
-
 </body>
 </html>
