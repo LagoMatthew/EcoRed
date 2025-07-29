@@ -1,285 +1,193 @@
+<!DOCTYPE html>
 <html>
 <head>
-
-<style>
- body{
-            margin: 0;
+  <meta charset="UTF-8">
+  <title>Emprendimientos</title>
+  <style>
+    body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      scroll-behavior: smooth; /* Scroll suave */
+      scroll-behavior: smooth;
     }
-		
-.encabezado {
-	display: flex;
-	align-items: center;
-	height: 65px;
-	background-color: #F7F7F7;
-	width: 100%;
-	justify-content: left;
-}
 
-.imagen {
-	width: 150px;
-	height: 60px;
-	margin: 5px;
-}
- .menu {
-    width: 100%;
-    align-items: center;
-    display: flex;
-    height: 50px;
-    justify-content: center;
-    background-color: white;
-	font-family: Times New Roman;
-	font-weight: bold;
-	position: relative;
-    z-index: 10;
-  }
-  nav {
-  }
-ul ul li > ul {
-    left: 100%; 
-    top: 0;
-	}
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
+    .encabezado {
+      display: flex;
+      align-items: center;
+      height: 65px;
+      background-color: #F7F7F7;
+      width: 100%;
+      justify-content: left;
+    }
 
-  li {
-    display: inline-block;
-    position: relative;
-  }
+    .imagen {
+      width: 150px;
+      height: 60px;
+      margin: 5px;
+    }
 
-  li a {
-    display: block;
-    color: black;
-    text-decoration: none;
-    padding: 17px 25;
-	
-  }
+    .menu {
+      width: 100%;
+      align-items: center;
+      display: flex;
+      height: 50px;
+      justify-content: center;
+      background-color: white;
+      font-family: Times New Roman;
+      font-weight: bold;
+    }
 
-  li:hover > ul {
-    display: block;
-  }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
 
-  ul ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    border: 1px solid black;
-  }
+    nav ul li {
+      position: relative;
+    }
 
-  ul ul li {
-    width: 100%;
-  }
-    li:hover > ul ul ul {
-    display: block;
-  }
+    nav ul li a {
+      display: block;
+      padding: 15px 20px;
+      text-decoration: none;
+      color: black;
+    }
 
-  li a:hover {
-    background-color: #808B96;
-  }
+    nav ul li a:hover {
+      background-color: #808B96;
+    }
 
-.div-container1 {
-    display: inline-block;
-    width: 70%;
-    margin: 15px;
-    border: 1px solid black;
-    padding: 1px;
-	height: 75%;
-	border-radius: 10px;
-background-color: rgba(255, 255, 255, 0.5); /
-	overflow:auto;
-}
-.div-container2 {
-background-color: rgba(255, 255, 255, 0.5); /
-    display: inline-block;
-    width: 70%;
-    margin: 15px;
-    border: 1px solid black;
-    padding: 1px;
-	height: 75%;
-	border-radius: 10px;
+    .titulo {
+      text-align: center;
+      padding: 30px;
+      background-color: #D0F0C0;
+    }
 
-	overflow:auto;
-}
-.div-container3 {
-    display: inline-block;
-    width: 70%;
-    margin: 15px;
-    border: 1px solid black;
-    padding: 1px;
-	height: 70%;
-	border-radius: 10px;
-background-color: rgba(255, 255, 255, 0.5); /
-	overflow:auto;
-}
-.contenedor1 {
-        display: flex;
-		height: 78.5%;
-}
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px;
+      background-color: #f5f5f5;
+    }
 
-.imagenes {
-	width: 80px;
-	height: 60px;
-	margin: 5px;
-}
+    .tarjeta {
+      width: 300px;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
 
-.pie {
-	display: flex;
-	align-items: center;
-	height: 35%;
-	justify-content: center;
-	width: 100%;
-	background-color:#302023;
-}
-.imag {
-	width: 100px;
-	height: 40px;
-	margin: 5px;
-	}
-	imggif {
-            width: 100%; 
-            height: 100%;
-            object-fit: cover; 
-        }
-.imaper {
-	width: 100%;
-	height: 70%;
-	margin: 0;
-	}
-.imapie {
-	width: 200px;
-	height: 110px;
-	margin: 0;
-	}
-.ico {
-	width: 170px;
-	height: 75px;
-	margin: 0;
-	}
-.footer-section{
-	display: inline-block;
-    width: 17%;
-	height: 20%;
-	background-color:#302023;
-	justify-content: center;
-	}
-	.footer-section1{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-    width: 100%;
-	height: 10%;
-	background-color:#302023;
-	}
-	
-.sobre-ecored {
-  padding: 40px 20px;
-  background-color: #e0f5e9; /* un verde claro */
-  font-family: 'Arial', sans-serif;
-  color: #2d572c; /* verde oscuro */
-  border-radius: 8px;
-  margin: 40px auto;
-  max-width: 800px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
+    .tarjeta img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
 
-.sobre-ecored h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
+    .tarjeta:hover img {
+      transform: scale(1.1);
+    }
 
-.sobre-ecored h3 {
-  font-size: 20px;
-  margin-top: 20px;
-  font-weight: bold;
-}
+    footer {
+      margin-top: 40px;
+    }
 
-.sobre-ecored p {
-  font-size: 16px;
-  line-height: 1.6;
-}
+    .pie {
+      display: flex;
+      align-items: center;
+      height: 35%;
+      justify-content: center;
+      width: 100%;
+      background-color:#302023;
+    }
 
+    .footer-section {
+      display: inline-block;
+      width: 17%;
+      height: 20%;
+      background-color:#302023;
+      justify-content: center;
+    }
 
-</style>
+    .footer-section1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 10%;
+      background-color:#302023;
+    }
+
+    .imapie {
+      width: 200px;
+      height: 110px;
+    }
+
+    .ico {
+      width: 170px;
+      height: 75px;
+    }
+  </style>
 </head>
 <body>
-
-		<header class="encabezado">
-		<img class="imagen" src="logo.jpg">
-		<h1></h1>
-		<div class="menu">
+  <header class="encabezado">
+    <img class="imagen" src="logo.jpg">
+    <div class="menu">
       <nav>
         <ul>
-		<li><a href="EcoRed.html">Inicio </a></li>
-          <li><a href="Sobre EcoRed.html">Sobre EcoRed</a>
-            <ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="emprendimientos.html">Emprendimientos</a>
-		  <UL>
-			  <li><a href=" delicias Manaba.html">Ecologi Mat</a></li>
-			  </li>
-			  </UL>
-          <li><a href="educacionECO.html">Educación Eco </a>
-
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="Sobre EcoRed.html">Sobre EcoRed</a></li>
+          <li><a href="emprendimientos.html">Emprendimientos</a></li>
+          <li><a href="educacionECO.html">Educación Eco</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </nav>
     </div>
-	</header>
-	
-	
-	
-<section class="sobre-ecored">
-  <h2>¿Qué es EcoRed?</h2>
-  <p>
-    Es una red digital de emprendimientos ecológicos. Nuestro objetivo es impulsar productos y servicios sostenibles, promoviendo el consumo responsable y el cuidado del medio ambiente.
-  </p>
+  </header>
 
-  <h2>¿Por qué nace?</h2>
-  <p>
-    Nace de la necesidad de visibilizar pequeños proyectos ecológicos que muchas veces no tienen plataformas donde mostrarse.
-  </p>
-</section>
+  <section class="titulo">
+    <h2>Emprendimientos Sostenibles</h2>
+    <p>Descubre ideas innovadoras que cuidan del planeta y fomentan el consumo responsable.</p>
+  </section>
 
+  <section class="galeria">
+    <a href="delicias Manaba.html" class="tarjeta">
+      <img src="delicias.jpg" alt="Delicias Manaba">
+    </a>
 
-  
+    <a href="ecoTiendaMat.html" class="tarjeta">
+      <img src="eco_tienda.jpg" alt="Eco Tienda Mat">
+    </a>
 
-	 <footer>
+    <a href="proximamente.html" class="tarjeta">
+      <img src="proximamente.jpg" alt="Próximamente">
+    </a>
+  </section>
+
+  <footer>
     <div class="pie">
-        <div class="footer-section">
-            <p><img class="imapie" src="logo.jpg" alt="Logo"></p>
-        </div>
-        <div class="footer-section">
-                <p style="color:#FFFFFF">
-					<a href="Sobre EcoRed.html" style="color:#FFFFFF; text-decoration: none;">Sobre EcoRed</a>
-				</p>
-				<p style="color:#FFFFFF">
-					<a href="emprendimientos.html" style="color:#FFFFFF; text-decoration: none;">Emprendimientos</a>
-				</p>
-				<p style="color:#FFFFFF">
-					<a href="educacionECO.html" style="color:#FFFFFF; text-decoration: none;">Educación Eco</a>
-				</p>
-				<p style="color:#FFFFFF">
-					<a href="contacto.html" style="color:#FFFFFF; text-decoration: none;">Contacto</a>
-				</p>
-        </div>
-        <div class="footer-section">
-		<p style="color:#FFFFFF">Sigue a EcoRed en redes sociales</p>
-         <p><img class="ico" src="REDES.jpg"></p>
-        </div>
-		
+      <div class="footer-section">
+        <p><img class="imapie" src="logo.jpg" alt="Logo"></p>
+      </div>
+      <div class="footer-section">
+        <p style="color:#FFFFFF"><a href="Sobre EcoRed.html" style="color:#FFFFFF; text-decoration: none;">Sobre EcoRed</a></p>
+        <p style="color:#FFFFFF"><a href="emprendimientos.html" style="color:#FFFFFF; text-decoration: none;">Emprendimientos</a></p>
+        <p style="color:#FFFFFF"><a href="educacionECO.html" style="color:#FFFFFF; text-decoration: none;">Educación Eco</a></p>
+        <p style="color:#FFFFFF"><a href="contacto.html" style="color:#FFFFFF; text-decoration: none;">Contacto</a></p>
+      </div>
+      <div class="footer-section">
+        <p style="color:#FFFFFF">Sigue a EcoRed en redes sociales</p>
+        <p><img class="ico" src="REDES.jpg"></p>
+      </div>
     </div>
-	<div class="footer-section1">
-		<p style="color:#8A8A8A;">Condiciones de uso<span style="margin-right: 20px;"></span>Política de privacidad<span style="margin-right: 20px;"></span>Acuerdo de licencia<span style="margin-right: 20px;"></span>&copy; 2025 EcoRed</p>
-        </div>
-</footer>
+    <div class="footer-section1">
+      <p style="color:#8A8A8A;">Condiciones de uso&nbsp;&nbsp;Política de privacidad&nbsp;&nbsp;Acuerdo de licencia&nbsp;&nbsp;&copy; 2025 EcoRed</p>
+    </div>
+  </footer>
 </body>
 </html>
